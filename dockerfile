@@ -13,8 +13,11 @@ RUN npm install
 # Copie todo o código do projeto para o container
 COPY . .
 
+# Compile o projeto (etapa de build)
+RUN npm run build
+
 # Exponha a porta que o Next.js vai rodar
 EXPOSE 3000
 
-# Comando para rodar o projeto
-CMD ["npm", "run", "dev"]
+# Comando para rodar o servidor em produção
+CMD ["npm", "start"]
